@@ -122,7 +122,6 @@ public class ExcelReader {
                     System.out.println("Number of Rows is " + numberOfRows);
                     System.out.println("Period is " + " " + formattedPeriod + " " + period);
                     System.out.println("Facility is " + facility);
-//                    System.exit(0);
 
 //                    String implementingMechanism = sheet.getRow(2).getCell(1, Row.CREATE_NULL_AS_BLANK).getStringCellValue();
 
@@ -134,9 +133,6 @@ public class ExcelReader {
                             dataValue = (int) currentRow.getCell(cell, Row.CREATE_NULL_AS_BLANK).getNumericCellValue();
                         } catch (Exception e) {
                         }
-//                        if (dataValue == 0) {
-//                            continue;
-//                        }
 //                        System.out.println("Data element " + dataelementUID.equals("") + ". Period " + formattedPeriod.equals("") + ". Data Value " + String.valueOf(dataValue).equals(""));
                         if (!dataelementUID.equals("") && !String.valueOf(dataValue).equals("") && formattedPeriod.equals(currentPeriod)) {
                             dataRows = new String[8];
@@ -157,7 +153,6 @@ public class ExcelReader {
                 writeRowToCSVFile( fileNameSuffix, csvList);
             }
 
-//            System.out.println("");
             workbook.close();
             File dir = new File("./Output");
             return "CSVs successfully extracted to <br/> '" + dir.getAbsolutePath().replace(".\\", "") + "'";
